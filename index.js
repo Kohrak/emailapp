@@ -2,8 +2,9 @@ const express = require('express'),
       mongoose = require('mongoose'),
       keys = require('./config/keys'),
       app = express();
-      
+
 mongoose.connect(keys.mongoURI);
+require('./models/User');
 require('./services/passport.js');
 require("./routes/authRoutes")(app);
 
